@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TendreVersZero.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">codingameYann</a> &gt; <a href="index.source.html" class="el_package">fr.ausy.codinggame.q35_tendreVersZero</a> &gt; <span class="el_source">TendreVersZero.java</span></div><h1>TendreVersZero.java</h1><pre class="source lang-java linenums">/**
+ * 
+ */
+package fr.ausy.codinggame.q35_tendreVersZero;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger; 
+
+/**
+ * @author Administrateur
+ *
+ */
+<span class="nc" id="L13">public class TendreVersZero {</span>
+	
+<span class="nc" id="L15">	static Logger LOGGER = LogManager.getLogger();</span>
+	
+	/**
+	 * M�thode permettant de d�terminer quel entier d'un tableau est le plus proche de 0.
+	 * Un entier positif est plus pr�s qu'un entier n�gatif.
+	 * @param ints le tableau des entiers � comparer.
+	 * @return l'entier le plus proche de 0.
+	 */
+	static int closestToZero(int[] ints) {
+		
+<span class="nc" id="L25">		System.out.println(&quot; Nom du logger : &quot; + LOGGER.getName());</span>
+<span class="nc bnc" id="L26" title="All 2 branches missed.">		if(LOGGER.isDebugEnabled()) {</span>
+<span class="nc" id="L27">			LOGGER.debug(&quot;Nombre de nombres : &quot; + ints.length);</span>
+		}
+<span class="nc" id="L29">		int result = Integer.MAX_VALUE;</span>
+
+<span class="nc bnc" id="L31" title="All 4 branches missed.">		if (ints == null || ints.length == 0) {</span>
+<span class="nc" id="L32">			result = 0;</span>
+<span class="nc" id="L33">		} else {</span>
+<span class="nc bnc" id="L34" title="All 2 branches missed.">			for (int i : ints) {</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">				if (Math.abs(result) &gt; Math.abs(i)) {</span>
+<span class="nc" id="L36">					result = i;</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">				} else if (Math.abs(result) == Math.abs(i)) {</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">					if (result &lt; 0) {</span>
+<span class="nc" id="L39">						result = i;</span>
+					}
+				}
+			}
+		}
+<span class="nc" id="L44">		return result;</span>
+	}
+
+	
+	public static void main(String[] args) {
+<span class="nc" id="L49">		int[] test = {1,4,12,2};</span>
+		
+<span class="nc" id="L51">		TendreVersZero.closestToZero(test);</span>
+<span class="nc" id="L52">	}</span>
+}
+ 
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug">
+	<Appenders>
+		<File name="classe" fileName="C:\TP\classe.log">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</File>
+		<File name="package" fileName="C:\TP\package.log">
+			<PatternLayout
+				pattern="[%t] %-5level %logger{36} - %msg%n" />
+		</File>
+		<File name="bdd" fileName="C:\TP\bdd.log">
+			<PatternLayout
+				pattern="[%t] %-5level %logger{36} - %msg%n" />
+		</File>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout>
+				<MarkerPatternSelector
+					defaultPattern="%sn. %msg: Logger=%logger%n">
+					<PatternMatch key="CLASS"
+						pattern="%sn. %msg: Class=%class%n" />
+				</MarkerPatternSelector>
+			</PatternLayout>
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="q35_tendreVersZero" level="INFO"
+			additivity="false">
+			<AppenderRef ref="package" />
+		</Logger>
+		<Logger name="q35_tendreVersZero.TendreVersZero" level="INFO"
+			additivity="false">
+			<AppenderRef ref="classe" />
+		</Logger>
+		<Logger name="org.hibernate.type.descriptor.sql" level="TRACE">
+			<AppenderRef ref="bdd" />
+		</Logger>
+
+		<Root level="info">
+			<AppenderRef ref="console" />
+		</Root>
+	</Loggers>
+</Configuration>

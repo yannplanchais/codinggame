@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+codingameYann,fr.ausy.codinggame.q31_approximationPI,PI,118,0,6,0,20,0,6,0,3,0
+codingameYann,fr.ausy.codinggame.q03_HelloArguments,Echo,30,0,4,0,6,0,4,0,2,0
+codingameYann,fr.ausy.codinggame.q33_desordreLePlusGrandGagne,Algorithm,155,0,4,0,16,0,5,0,3,0
+codingameYann,fr.ausy.codinggame.q39_RenduDeMonnaie,Monnaie,12,0,0,0,4,0,1,0,1,0
+codingameYann,fr.ausy.codinggame.q39_RenduDeMonnaie,Solution,109,0,10,0,17,0,7,0,2,0
+codingameYann,fr.ausy.codinggame.q34_arbre_node,Node,213,0,12,0,47,0,9,0,3,0
+codingameYann,fr.ausy.codinggame.q35_tendreVersZero,TendreVersZero,97,0,14,0,19,0,11,0,4,0

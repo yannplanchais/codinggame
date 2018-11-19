@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PI.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">codingameYann</a> &gt; <a href="index.source.html" class="el_package">q31_approximationPI</a> &gt; <span class="el_source">PI.java</span></div><h1>PI.java</h1><pre class="source lang-java linenums">/**
+ * 
+ */
+package q31_approximationPI;
+
+/**
+ * @author Administrateur
+ * Approximation de PI
+ * avec x et y compris entre 0 et 1 inclus
+ * - si x^2 + y^2 &lt;= 1 =&gt; point � l'int�rieur du cercle
+ * =&gt; la probabilit� que le point se situe � l'int�rieur du cercle est �gale � Pi/4
+ */
+<span class="nc" id="L13">public class PI {</span>
+
+	static double approx(double[][] pts) {
+<span class="nc" id="L16">		double exterieur = 0;</span>
+<span class="nc" id="L17">		double interieur = 0;</span>
+<span class="nc bnc" id="L18" title="All 2 branches missed.">		for (int i = 0; i &lt; pts.length; i++) {</span>
+<span class="nc" id="L19">			double calcul = pts[i][0]* pts[i][0] + pts[i][1]* pts[i][1];</span>
+<span class="nc bnc" id="L20" title="All 2 branches missed.">			if (calcul &lt;= 1) {</span>
+<span class="nc" id="L21">				interieur +=1;</span>
+			} else {
+<span class="nc" id="L23">				exterieur += 1;</span>
+			}
+		}
+<span class="nc" id="L26">		return interieur/pts.length;</span>
+	}
+	
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+<span class="nc" id="L35">		double[][] pts = new double [100000][2];</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">		for (int i = 0; i &lt; 100000; i++) {</span>
+<span class="nc" id="L37">			pts [i][0] = Math.random();</span>
+<span class="nc" id="L38">			pts [i][1] = Math.random();</span>
+		}
+<span class="nc" id="L40">		System.out.println(&quot;Resultat : &quot; + approx(pts));</span>
+		
+<span class="nc" id="L42">		double[][] pts_unitaire = new double [1][2];</span>
+<span class="nc" id="L43">		pts_unitaire[0][0] = 1;</span>
+<span class="nc" id="L44">		pts_unitaire[0][1] = 0;</span>
+		
+<span class="nc" id="L46">		System.out.println(&quot;Resultat : &quot; + approx(pts_unitaire));</span>
+<span class="nc" id="L47">	}</span>
+
+}
+ 
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
