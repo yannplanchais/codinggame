@@ -14,7 +14,6 @@ open module codingameYann {
 	exports fr.ausy.codinggame.q03_HelloArguments;
 	exports fr.ausy.codinggame.q35_tendreVersZero;
 
-	requires org.junit.jupiter.api;
 	requires org.apache.logging.log4j;
 	
 	requires jdk.unsupported;

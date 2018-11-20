@@ -1,8 +1,10 @@
 package fr.ausy.codinggame.q34_arbre_node;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
+import org.junit.Test;
 
 import fr.ausy.codinggame.q35_tendreVersZero.TendreVersZero;
 
@@ -12,18 +14,18 @@ class NodeTest {
 	final void testFind() {
 		Node n = new Node(5);
 		Node result = n.find(5);
-		assertEquals(n.value, result.value,
-				"Le noeud source aurait du être retourné.");
-		assertEquals(1, result.profondeur, "On doit bien trouvé la bonne profondeur de l'arbre.");
-		assertNull(n.find(1), "Aucun noeud n'aurait du être trouvé.");
-		assertNull(n.find(10), "Aucun noeud n'aurait du être trouvé.");
+		assertEquals("Le noeud source aurait du être retourné.",n.value, result.value
+				);
+		assertEquals( "On doit bien trouvé la bonne profondeur de l'arbre.",1, result.profondeur);
+		assertNull("Aucun noeud n'aurait du être trouvé.",n.find(1));
+		assertNull("Aucun noeud n'aurait du être trouvé.",n.find(10));
 		
 		n = this.creationArbreSimple();
 		result = n.find(8);
-		assertEquals(8, result.value, "Le noeud trouvé doit bien avoir la bonne valeur.");
-		assertEquals(null, result.left, "Le noeud retourné ne doit pas avoir de fils gauche.");
-		assertEquals(null, result.right, "Le noeud retourné ne doit pas avoir de fils droit.");
-		assertEquals(3, result.profondeur, "On doit bien trouvé la bonne profondeur de l'arbre.");
+		assertEquals("Le noeud trouvé doit bien avoir la bonne valeur.",8, result.value);
+		assertEquals( "Le noeud retourné ne doit pas avoir de fils gauche.",null, result.left);
+		assertEquals("Le noeud retourné ne doit pas avoir de fils droit.",null, result.right);
+		assertEquals("On doit bien trouvé la bonne profondeur de l'arbre.",3, result.profondeur);
 		
 		
 		
@@ -31,8 +33,8 @@ class NodeTest {
 		int longueur = 10000;
 		n = this.creationArbreComplexe(longueur);
 		result = n.find(1666);
-		assertEquals(1666, result.value, "Le noeud trouvé doit bien avoir la bonne valeur.");
-		assertEquals(1666, result.profondeur, "On doit bien trouvé la bonne profondeur de l'arbre.");
+		assertEquals("Le noeud trouvé doit bien avoir la bonne valeur.",1666, result.value);
+		assertEquals("On doit bien trouvé la bonne profondeur de l'arbre.",1666, result.profondeur);
 		
 		
 	}

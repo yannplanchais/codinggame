@@ -3,9 +3,10 @@
  */
 package fr.ausy.codinggame.q35_tendreVersZero;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 import fr.ausy.codinggame.q35_tendreVersZero.TendreVersZero;
 
@@ -24,31 +25,31 @@ class TendreVersZeroTest {
 
 		int[] test = new int[] {};
 
-		assertEquals(0, TendreVersZero.closestToZero(test),
-				"Le résultat n'est pas correct avec tableau vide.Le bon résultat devrait être 0.");
-		assertEquals(0, TendreVersZero.closestToZero(null),
-				"Le résultat n'est pas correct avec tableau null.Le bon résultat devrait être 0.");
+		assertEquals("Le résultat n'est pas correct avec tableau vide.Le bon résultat devrait être 0.",0, TendreVersZero.closestToZero(test)
+				);
+		assertEquals(
+				"Le résultat n'est pas correct avec tableau null.Le bon résultat devrait être 0.",0, TendreVersZero.closestToZero(null));
 
 		test = new int[] { 4 };
-		assertEquals(4, TendreVersZero.closestToZero(test), "Résultat incorrect.On attend le singleton 4.");
+		assertEquals( "Résultat incorrect.On attend le singleton 4.",4, TendreVersZero.closestToZero(test));
 
 		test = new int[] { -3 };
-		assertEquals(-3, TendreVersZero.closestToZero(test), "Résultat incorrect.On attend le singleton -3.");
+		assertEquals("Résultat incorrect.On attend le singleton -3.",-3, TendreVersZero.closestToZero(test));
 
 		test = new int[] { 1, 4, 12, 2 };
-		assertEquals(1, TendreVersZero.closestToZero(test), "Résultat incorrect.Le bon résultat placé en premier.");
+		assertEquals( "Résultat incorrect.Le bon résultat placé en premier.",1, TendreVersZero.closestToZero(test));
 
 		test = new int[] { 3, 4, 12, 2 };
-		assertEquals(2, TendreVersZero.closestToZero(test),
-				"Le résultat n'est pas correct avec le bon résultat placé en dernier.");
+		assertEquals(
+				"Le résultat n'est pas correct avec le bon résultat placé en dernier.",2, TendreVersZero.closestToZero(test));
 
 		test = new int[] { -2, 4, 12, 2 };
-		assertEquals(2, TendreVersZero.closestToZero(test),
-				"Le résultat n'est pas correct : on attend le nombre positif en premier.");
+		assertEquals(
+				"Le résultat n'est pas correct : on attend le nombre positif en premier.",2, TendreVersZero.closestToZero(test));
 
 		test = new int[] { 2, 4, 12, -2 };
-		assertEquals(2, TendreVersZero.closestToZero(test),
-				"Le résultat n'est pas correct : on attend le nombre positif en premier.");
+		assertEquals(
+				"Le résultat n'est pas correct : on attend le nombre positif en premier.",2, TendreVersZero.closestToZero(test));
 
 		
 	}

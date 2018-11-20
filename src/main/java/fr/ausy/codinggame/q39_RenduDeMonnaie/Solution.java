@@ -20,7 +20,7 @@ public class Solution {
 		long somme = s;
 		boolean ajoutDix = false;
 		if (s > 10) {
-			somme =- 10;
+			somme -= 10;
 			ajoutDix = true;
 			
 		}
@@ -28,14 +28,20 @@ public class Solution {
 		monnaie.billet5 = (somme -10*monnaie.billet10)/5;
 		monnaie.piece2 = (somme -10*monnaie.billet10 - 5*monnaie.billet5)/2;
 		
-		System.out.println(s + " => " + monnaie.billet10 + "|" + monnaie.billet5 + "|" + monnaie.piece2);
 		
 		if ((10*monnaie.billet10 + 5*monnaie.billet5 +2*monnaie.piece2 ) == somme ) {
 			if(ajoutDix) {
 				monnaie.billet10 ++;
 			}
 		} 
+		
+		monnaie.nombreBillets = MonnaieUtils.calculNombreBillets(monnaie);
+		
+		System.out.println(s + " => " + monnaie.billet10 + "|" + monnaie.billet5 + "|" + monnaie.piece2);
+
 		return monnaie;
 	}
 	
 }
+
+
